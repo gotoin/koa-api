@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
-import { mysql } from '../config/env';
+import { mysql } from '../config/index';
 
-const db = new Sequelize(mysql.database, mysql.username, 'password', {
+const sequelize = new Sequelize(mysql.database, mysql.username, mysql.password, {
   // 自定义主机; 默认值: localhost
   host: mysql.host,
 
@@ -84,4 +84,5 @@ const db = new Sequelize(mysql.database, mysql.username, 'password', {
   // isolationLevel: Transaction.ISOLATION_LEVELS.REPEATABLE_READ,
 });
 
-export default db;
+module.exports = { sequelize, Sequelize };
+
