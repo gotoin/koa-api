@@ -30,7 +30,8 @@ $ npm install
 修改数据库 config/env/development.js
 
 ```
-
+# 数据库迁移
+$ npm run sequelize db:migrate
 # 本地开发
 $ npm run start
 # 部署
